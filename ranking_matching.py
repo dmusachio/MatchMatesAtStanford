@@ -73,7 +73,7 @@ def group_rankings(groups):
 
 
 def rankings_of_group:
-    
+
 
 
 
@@ -82,9 +82,31 @@ def main():
     init() # initialize rankings
     non_compatible_users = get_least_compatible_users(NUM_PEOPLE)
     new_groups = group_rankings(groups)
-    print(groups)
-    print(new_groups)
-    print(groups)
+
+    """
+    Here is large picture of what I am envisioning. Assume we have some algorithm that, given preferences of users,
+    creates some ranking of all other users. So if we have 20 users, each user has ranking of other 19, (1-19).
+    
+    Once we have that, here is procedure I think we should use.
+    
+    1. Determine Number of groups (I am imagining 4-5 per group right now but that is placeholder) IMPLEMENTED
+    
+    2. Pick random person (person 1) to be in group 1, then assign least-compatible user with person_1 to be in group 2
+    and assign least compatible user between 1 and 2 to be in group 3 etc. until there is one person in each group. IMPLEMENTED
+    
+    3. Use Gale-Shipley algorithm to match each group with 1 new partner. We will have to create group rankings for each
+    non-group member and vice-versa. After first round, there will be 2 members in each group
+    
+    4. Recalculate group rankigns and run G-S algo. Now there will be 3 people per group
+    
+    5. Recalculate group rankigns and run G-S algo. Now there will be 4 people per group
+    
+    6. Recalculate group rankigns and run G-S algo. There will be less non-group members than groups so after the last
+    round, some groups will have 4 and some will have 5 but every user will be matched to a group
+    
+    """
+
+
 
 
 
