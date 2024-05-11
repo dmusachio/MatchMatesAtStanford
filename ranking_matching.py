@@ -1,3 +1,5 @@
+import csv_to_table
+
 """
     Large picture of what this program does. Assume we have some algorithm that, given preferences of users,
     creates some ranking of all other users. So if we have 20 users, each user has ranking of other 19, (1-19):
@@ -18,17 +20,35 @@
     round, some groups will have 4 and some will have 5 but every user will be matched to a group
 
 """
-
+import table_to_rankings
 import random
 
-NUM_PEOPLE = 802
-PREFFERED_SIZE_OF_GROUP = 4
+
+#NUM_QUESTIONS = 10
+#NUM_PEOPLE = 9
+ANSWERS, NUM_PEOPLE, NUM_QUESTIONS = csv_to_table.get_table()
+
+
+
+QUESTION_TYPES_AND_VALUES = [(1,1,1),(2,1,1),(3,1,1),(4,1,1),(5,1,1),(6,1,1),(7,1,4),(8,2,4),(9,2,4),(10,2,4)]
+
+
+
+
+
+
+PREFFERED_SIZE_OF_GROUP = 2
 NUM_GROUPS = NUM_PEOPLE // PREFFERED_SIZE_OF_GROUP
+
+
+
+
 users_not_in_group = [i for i in range(1, NUM_PEOPLE + 1)]
 
-ranking = {i: {} for i in range(1, NUM_PEOPLE + 1)}
+ranking = table_to_rankings.get_user_rankings(NUM_QUESTIONS, NUM_PEOPLE, ANSWERS, QUESTION_TYPES_AND_VALUES)
 groups = {i: [] for i in range(1, NUM_GROUPS + 1)}
 
+"""
 def init(): #initialize rankings of each user with random values (eventually will be replaced with meaningful values)
     for i in range(1, NUM_PEOPLE + 1):
         people_to_rank = list(range(1, NUM_PEOPLE + 1))
@@ -36,6 +56,7 @@ def init(): #initialize rankings of each user with random values (eventually wil
         random.shuffle(people_to_rank)
         rankings = {person_being_ranked: rank for rank, person_being_ranked in enumerate(people_to_rank, start=1)}
         ranking[i] = rankings
+        """
 def find_least_compatible(list_of_users): #given a list of users, returns SEPERATE user who is least compatible with the users on the list
     sum_of_scores = {}
     for i in range(NUM_PEOPLE):
@@ -110,6 +131,7 @@ def rankings_of_groups(users_not_in_group): #updates the group preference of all
     return user_ranking_of_groups
 
 """
+        
 Gale-Shipley Algorithm (slightly modified): Imagine the Group is it's own entity with it's own rankings. 
 It proposes to it's highest ranked student to join the group. If the user has no better offer, it joins
 that group. Else, it joins another group and the group proposes to it's next favorite user in the next
@@ -168,8 +190,8 @@ def assign_remaining_group_members(remaining_users_rankings_of_groups): #assigns
                 break
     return groups, updated_users_not_in_group
 
-def main():
-    init()
+def mains():
+
 
     get_least_compatible_users()
     group_rankings(groups)
@@ -183,8 +205,6 @@ def main():
     if final_set_of_users_not_in_group == []:
         print("ALL MEMBERS MATCHED")
 
-    print(final_set_of_groups)
+    #print(final_set_of_groups)
     return final_set_of_groups
 
-if __name__ == "__main__":
-    main()
