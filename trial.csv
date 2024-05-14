@@ -1,11 +1,12 @@
-Name,1,2,3,4,5,6,7,8,9,10
-Description,I am organized,I enjoy life,I like math,I am creative,I am cool,I like CS,I play sports,Studying is cool,I want to study a lot,I want to find a friend not just study partner
-Harry,3,3,3,1,4,2,1,0,1,0
-Sally,2,1,0,2,4,4,1,0,0,1
-Jones,1,4,3,3,4,2,3,0,0,1
-Robby,4,4,1,2,3,5,1,1,1,0
-Klaus,4,2,4,2,1,4,2,1,1,0
-Ringo,4,4,1,4,4,3,4,0,1,0
-Beatrice,1,3,4,3,5,1,3,1,1,0
-Dan,5,5,3,1,5,3,3,0,0,1
-Polly,5,1,3,2,3,4,5,1,0,1
+Name,1,2,3,4,5,6,7,8,9,10,11,12
+Description,Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9, Question10, Question11, Question12
+Harry Potter,3,2,4,1,1,3,2,3,0,1,1,0
+Hermoine Granger,3,2,1,4,4,4,3,0,1,1,1,0
+Ron Weasley,3,4,3,2,3,3,4,1,1,1,1,0
+Draco Malfoy,2,3,1,1,2,3,1,0,0,1,0,1
+Snape,1,1,2,1,2,2,3,1,0,0,0,1
+Voldemort,1,2,2,1,2,1,1,0,0,0,0,1
+Cedric (Hufflepuff guy), 3,3,1,2,2,3,1,1,0,1,1,1
+Hagrid, 3,4,3,1,2,3,4,1,0,1,1,1
+Dobby,3,2,4,1,2,3,1,2,0,1,0,0
+

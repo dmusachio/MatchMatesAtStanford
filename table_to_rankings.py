@@ -17,6 +17,11 @@ def get_score(question_tuple, user1_response, user2_response):
             return question_tuple[2]
         else:
             return 0
+    elif question_tuple[1] == 3:
+        if user1_response == user2_response:
+            return question_tuple[2]
+        else:
+            return 0
 
 
 def sim_score(user1, user2, question_types_and_values, num_questions, answers):
