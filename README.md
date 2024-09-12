@@ -1,0 +1,1 @@
+This is the backend of a software developed for CS 278 (Social Computing). MatchMates aims to match compatible students with one another. Daniel Musachio developed the back-end algorithm for matching incorporating a number of algorithms from Computer Science, Math, and Economics. The software was launched in June of 2024 and received favorable reviews.
